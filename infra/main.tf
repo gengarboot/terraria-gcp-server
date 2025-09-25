@@ -16,6 +16,7 @@ resource "google_compute_instance" "server" {
     }
 
     # Network tags?
+    # TODO - can probably remove these
     tags = ["https-server", "http-server"]
 
     network_interface {
