@@ -9,3 +9,4 @@
     - Create service key (json) and download and put in root of terraform project locally
 - Add key to .gitignore
 - Run terraform init in ./infra directory
+- Run terraform apply in ./infra directory
