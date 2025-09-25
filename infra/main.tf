@@ -3,13 +3,15 @@ locals {
 }
 resource "google_compute_instance" "server" {
     name = "terraria-server"
-    machine_type = "e2-small"
+    # micro around 6$ monthly
+    # small around 12$ monthly
+    machine_type = "e2-micro"
 
     # Zone marked as optional in documentation but seems required
     zone = "europe-north2-a" 
     boot_disk {
       initialize_params {
-        image = "ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20250924"
+        image = "ubuntu-minimal-2404-noble-amd64-v20250923a"
       }
     }
 
