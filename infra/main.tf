@@ -1,7 +1,7 @@
 resource "google_compute_instance" "server" {
     name = "terraria-server"
     machine_type = "e2-micro"
-    
+
     # Zone marked as optional in documentation but seems required
     zone = "europe-north2-a" 
     boot_disk {
@@ -10,6 +10,7 @@ resource "google_compute_instance" "server" {
       }
     }
     network_interface {
-      
+        # What does this mean?
+        network = "default"
     }
 }
