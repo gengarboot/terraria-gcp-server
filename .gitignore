@@ -35,3 +35,9 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore mac .DS_store
+.DS_store
+
+# Ignore GCP service account
+terraform-svc.json
