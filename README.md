@@ -10,6 +10,7 @@
 - Add key to .gitignore
 - Run terraform init in ./infra directory
 - Run terraform apply in ./infra directory
+- Check the output in the terminal for information on what the instances external-ip is
 
 
 # Goals
