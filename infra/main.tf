@@ -19,6 +19,10 @@ resource "google_compute_instance" "server" {
     network_interface {
         # What does this mean?
         network = "default" 
+
+        access_config {
+            # Here to give machine external ip to access internet? 
+        }
     }
 
     metadata = {
