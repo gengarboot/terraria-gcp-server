@@ -1,6 +1,9 @@
 locals {
   startup_script = file("../scripts/startup.sh")
 }
+
+# Firewall resource 
+
 resource "google_compute_instance" "server" {
     name = "terraria-server"
     # micro around 6$ monthly
@@ -17,7 +20,7 @@ resource "google_compute_instance" "server" {
 
     # Network tags?
     # TODO - can probably remove these
-    tags = ["https-server", "http-server"]
+    # tags = ["https-server", "http-server"]
 
     network_interface {
         # What does this mean?
@@ -28,7 +31,11 @@ resource "google_compute_instance" "server" {
         }
     }
 
+    # This script runs on literally all startups not only the first
     metadata = {
         startup-script = local.startup_script
     }
+
+    # RUNNING or TERMINATED
+    desired_status = "RUNNING"
 }
