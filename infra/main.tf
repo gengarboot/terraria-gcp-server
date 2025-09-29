@@ -2,8 +2,6 @@ locals {
   startup_script = file("../scripts/startup.sh")
 }
 
-# Firewall resource 
-
 resource "google_compute_instance" "server" {
     name = "terraria-server"
     # micro around 6$ monthly
@@ -18,20 +16,16 @@ resource "google_compute_instance" "server" {
       }
     }
 
-    # Network tags?
-    # TODO - can probably remove these
-    # tags = ["https-server", "http-server"]
+    # Used for applying my custom firewall rules
+    tags = ["terraria"]
 
     network_interface {
-        # What does this mean?
-        network = "default" 
-
-        access_config {
-            # Here to give machine external ip to access internet? 
-        }
+        network = google_compute_network.terraria-vpc.id
+        
+        # Here to give machine external ip
+        access_config {}
     }
 
-    # This script runs on literally all startups not only the first
     metadata = {
         startup-script = local.startup_script
     }
