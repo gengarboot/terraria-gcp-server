@@ -29,7 +29,7 @@ resource "google_compute_firewall" "terraria-firewall" {
         ports = ["7777"]
     }
 
-    # Which IP's to allow
+    # Which IP's to allow - if this is empty it will allow everyone
     source_ranges = [
         ""
     ]
