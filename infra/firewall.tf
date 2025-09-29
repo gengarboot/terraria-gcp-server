@@ -7,16 +7,18 @@ resource "google_compute_firewall" "terraria-firewall" {
     network = google_compute_network.terraria-vpc.id
     target_tags = ["terraria"]
 
+    # Ping
     allow {
         protocol = "icmp"
     }
 
+    # SSH
     allow {
         protocol = "tcp"
         ports = ["22"]
     }
 
-    # For terraria server 
+    # Terraria Server
     allow {
         protocol = "tcp"
         ports = ["7777"]
