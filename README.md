@@ -22,7 +22,6 @@
 - Have a Cloud bucket that have the terraria world saved between sessions
 - Automatically load in last world on start-up
 - Automatically save to bucket on shut-down
-- Have firewall rules only allowing in specific IP ranges
 
 ## Stretch goals
 - Easy way to start and stop server
