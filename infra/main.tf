@@ -3,6 +3,8 @@ locals {
 }
 
 resource "google_compute_instance" "server" {
+    # Need beta provider for graceful-shutdown
+    provider = google-beta 
     name = "terraria-server"
     # micro around 6$ monthly
     # small around 12$ monthly
@@ -27,6 +29,19 @@ resource "google_compute_instance" "server" {
 
     metadata = {
         startup-script = local.startup_script
+        shutdown-script = <<-EOF
+        #!/bin/bash
+        systemctl stop terraria.service
+        EOF
+    }
+
+    scheduling {
+      graceful_shutdown {
+        enabled = true
+        max_duration {
+          seconds = "10"    
+        }
+      } 
     }
 
     # RUNNING or TERMINATED

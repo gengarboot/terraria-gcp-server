@@ -32,6 +32,6 @@ resource "google_compute_firewall" "terraria-firewall" {
     # Which IP's to allow - replace 0.0.0.0/0 (allow all) with comma separated ip's 
     source_ranges = [
         "35.235.240.0/20", # GCP IAP range https://cloud.google.com/iap/docs/using-tcp-forwarding
-        ""
+        "0.0.0.0/0"
     ]
 }
