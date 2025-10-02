@@ -8,7 +8,6 @@ resource "google_compute_instance" "server" {
     # small around 12$ monthly
     machine_type = "e2-small"
 
-    # Zone marked as optional in documentation but seems required
     zone = "europe-north2-a" 
     boot_disk {
       initialize_params {
@@ -31,5 +30,5 @@ resource "google_compute_instance" "server" {
     }
 
     # RUNNING or TERMINATED
-    desired_status = "RUNNING"
+    desired_status = "TERMINATED"
 }
