@@ -30,5 +30,5 @@ resource "google_compute_instance" "server" {
     }
 
     # RUNNING or TERMINATED
-    desired_status = "TERMINATED"
+    desired_status = "RUNNING"
 }

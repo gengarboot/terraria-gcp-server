@@ -19,3 +19,4 @@
 ## Stretch goals
 - Easy way to start and stop server
 - Automatically save to bucket on shut-down and load from it on startup
+- Add static IP
