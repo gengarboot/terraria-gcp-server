@@ -29,7 +29,7 @@ resource "google_compute_instance" "server" {
 
     metadata = {
         startup-script = local.startup_script
-        shutdown-script = <<-EOF
+        shutdown-script = <<EOF
         #!/bin/bash
         systemctl stop terraria.service
         EOF
