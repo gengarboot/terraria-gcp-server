@@ -6,7 +6,7 @@ resource "google_compute_instance" "server" {
     name = "terraria-server"
     # micro around 6$ monthly
     # small around 12$ monthly
-    machine_type = "e2-micro"
+    machine_type = "e2-small"
 
     # Zone marked as optional in documentation but seems required
     zone = "europe-north2-a" 

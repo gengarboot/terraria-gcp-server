@@ -16,12 +16,6 @@
 - Run terraform apply in ./infra directory
 - Check the output in the terminal for information on what the instances external-ip is
 
-
-# Goals
-- Have a compute instance running terraria
-- Have a Cloud bucket that have the terraria world saved between sessions
-- Automatically load in last world on start-up
-- Automatically save to bucket on shut-down
-
 ## Stretch goals
 - Easy way to start and stop server
+- Automatically save to bucket on shut-down and load from it on startup
