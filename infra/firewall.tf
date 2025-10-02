@@ -29,8 +29,8 @@ resource "google_compute_firewall" "terraria-firewall" {
         ports = ["7777"]
     }
 
-    # Which IP's to allow - if this is empty it will allow everyone
+    # Which IP's to allow - replace 0.0.0.0/0 (allow all) with comma separated ip's 
     source_ranges = [
-        ""
+        "0.0.0.0/0"
     ]
 }
