@@ -37,7 +37,7 @@ TimeoutStartSec=900
 User=terraria
 Group=terraria
 KillMode=none
-ExecStart=/usr/bin/screen -dmS terraria /bin/bash -c "/home/terraria/server/1449/Linux/TerrariaServer.bin.x86_64 -port 7777 -players 4 -world /home/terraria/.local/share/Terraria/Worlds/world.wld -autocreate 2 -secure"
+ExecStart=/usr/bin/screen -dmS terraria /bin/bash -c "/home/terraria/server/1449/Linux/TerrariaServer.bin.x86_64 -port 7777 -players 4 -world /home/terraria/.local/share/Terraria/Worlds/World.wld -autocreate 2 -secure"
 ExecStop=/usr/local/bin/terrariad exit
 
 [Install]
